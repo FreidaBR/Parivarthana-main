@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parivarthana - Handcrafted Excellence</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="logo.png" alt="CSA Centre for Social Action">
+                <h1><center>PARIVARTHANA</center></h1>
+            </div>
+
+            <nav>
+                <a href="#home">HOME</a>
+                <a href="#shop">SHOP</a>
+                <a href="#about">ABOUT</a>
+                <a href="#contact">CONTACT</a>
+                <button class="auth-icon" onclick="openAuthModal()" title="Sign in / Register" aria-label="Sign in or register">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5z" stroke="#0d7768" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 21c0-3.866 3.582-7 9-7s9 3.134 9 7" stroke="#0d7768" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="cart-icon" onclick="toggleCart()">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="cart-count" id="cartCount">0</span>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <p class="hero-subtitle">Handcrafted with Love</p>
+                <h1 class="hero-title">Crafted by Heart, Chosen by You</h1>
+                <p class="hero-description">Discover unique handmade treasures that tell a story. Each piece is lovingly created by skilled artisans, bringing warmth and authenticity to your everyday life.</p>
+                <div class="hero-buttons">
+                    <button class="hero-btn-primary" onclick="scrollToShop()">EXPLORE COLLECTION</button>
+                    <button class="hero-btn-secondary" onclick="scrollToAbout()">OUR STORY</button>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">17+</span>
+                        <span class="hero-stat-label">Years</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">100%</span>
+                        <span class="hero-stat-label">Handmade</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">Zero</span>
+                        <span class="hero-stat-label">Waste</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission" id="about">
+        <h3>ABOUT US</h3>
+        <div class="about-container">
+            <div class="about-video">
+                <div class="video-container" id="videoContainer">
+                    <div class="video-slide active" id="video1">
+                        <video controls autoplay muted loop playsinline>
+                            <source src="Final Documentary Parivarthana 1.mp4" type="video/mp4">
+                            <source src="Final Documentary Parivarthana 1.mp4" type="video/webm">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="video-slide" id="video2">
+                        <video controls autoplay muted loop playsinline>
+                            <source src="Final Documentary Parivarthana 2[1].mp4" type="video/mp4">
+                            <source src="Final Documentary Parivarthana 2[1].mp4" type="video/webm">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="video-slide" id="video3">
+                        <video controls autoplay muted loop playsinline>
+                            <source src="parivarthana.mp4" type="video/mp4">
+                            <source src="about-video3.webm" type="video/webm">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                <button class="video-toggle" onclick="toggleAboutVideo()" title="Switch video">→</button>
+            </div>
+            <div class="about-content">
+
+                <p>Parivarthana, established in 2008 within the CHRIST (Deemed to be University) campus, is dedicated to transforming waste into valuable resources and promoting responsible waste management. Our primary objective is to maintain CHRIST (Deemed to be University) as a zero-waste campus through recycling and repurposing initiatives.
+At the core of Parivarthana's operations are the dedicated women within the unit, supported by student volunteers and university administration. 
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Stats Bar (card trio with hover color reveal) -->
+    <section class="impact-stats-bar">
+        <div class="impact-stats-bar-wrap">
+            <div class="impact-stats-inner">
+                <div class="impact-card">
+                    <div class="card-surface">
+                        <span class="count" data-target="120">0</span><span class="plus">+</span>
+                    </div>
+                    <p>Tonnes of Waste Diverted</p>
+                </div>
+                <div class="impact-card">
+                    <div class="card-surface">
+                        <span class="count" data-target="40">0</span><span class="plus">+</span>
+                    </div>
+                    <p>Women's Lives Impacted</p>
+                </div>
+                <div class="impact-card">
+                    <div class="card-surface">
+                        <span class="count" data-target="50">0</span><span class="plus">+</span>
+                    </div>
+                    <p>Unique Products</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="category-grid">
+            <div class="category-card" onclick="filterCategory('Stationery')">
+                <div class="category-content">
+                    <img src="https://www.papersource.com/cdn/shop/files/2025-09-sd-stationery-sets.webp?v=1757607179&width=600" alt="Stationery">
+                </div>
+                <div class="category-overlay">
+                    <h4>Stationery</h4>
+                </div>
+            </div>
+            <div class="category-card" onclick="filterCategory('Accessories')">
+                <div class="category-content">
+                    <img src="https://media.istockphoto.com/id/958552122/photo/handcrafts-and-goods-on-display-in-a-street-market-nairobi-kenya.jpg?s=612x612&w=0&k=20&c=-98VL29wOwxSALOZtDLYB4-UaOwMwl7hfhXKamPc_cg=" alt="Accessories">
+                </div>
+                <div class="category-overlay">
+                    <h4>Accessories</h4>
+                </div>
+            </div>
+            <div class="category-card" onclick="filterCategory('Gift Items')">
+                <div class="category-content">
+                    <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=400" alt="Gift Items">
+                </div>
+                <div class="category-overlay">
+                    <h4>Gift Items</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="shop">
+        <h2 class="section-title">FEATURED PRODUCTS:</h2>
+        <div class="product-grid" id="productGrid">
+            <!-- Products will be loaded here by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <h2 class="section-title">OUR GALLERY</h2>
+        <div class="gallery-container">
+            <div class="gallery-slider" id="gallerySlider">
+                <div class="gallery-slide active">
+                    <img src="1new(1).jpg" alt="Gallery Image 1">
+                </div>
+                <div class="gallery-slide">
+                    <img src="image.png" alt="Gallery Image 2">
+                </div>
+                <div class="gallery-slide">
+                    <img src="image1.png" alt="Gallery Image 3">
+                </div>
+                <div class="gallery-slide">
+                    <img src="image2.png" alt="Gallery Image 4">
+                </div>
+                <div class="gallery-slide">
+                    <img src="image3.png" alt="Gallery Image 5">
+                </div>
+                <div class="gallery-slide">
+                    <img src="https://images.unsplash.com/photo-1523961131990-5ea266b8a201?w=1200&h=675&fit=crop" alt="Gallery Image 6">
+                </div>
+                <div class="gallery-slide">
+                    <img src="https://images.unsplash.com/photo-1489749798305-4fea3ba63d60?w=1200&h=675&fit=crop" alt="Gallery Image 7">
+                </div>
+                <div class="gallery-slide">
+                    <img src="https://images.unsplash.com/photo-1563254273-3c1faf54f9b4?w=1200&h=675&fit=crop" alt="Gallery Image 8">
+                </div>
+                <div class="gallery-slide">
+                    <img src="https://images.unsplash.com/photo-1576395075758-8e8a3a1b8c7d?w=1200&h=675&fit=crop" alt="Gallery Image 9">
+                </div>
+                <div class="gallery-slide">
+                    <img src="https://images.unsplash.com/photo-1589934284090-672146e51600?w=1200&h=675&fit=crop" alt="Gallery Image 10">
+                </div>
+
+                <button class="gallery-arrow left" onclick="prevGallerySlide()">❮</button>
+                <button class="gallery-arrow right" onclick="nextGallerySlide()">❯</button>
+
+                <div class="gallery-controls" id="galleryControls"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2 class="section-title">WHAT OUR CUSTOMERS SAY</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text"> xfdcgvhbnjihyxdcfgvhbnj</p>
+                <p class="testimonial-author">- Rama Iyer</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">Tujoij'0po=-</p>
+                <p class="testimonial-author">- Kavita Sharma</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">xrctvybu</p>
+                <p class="testimonial-author">- Priya Nair</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>YOUR CART</h3>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">₹0</span>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">CHECKOUT</button>
+        </div>
+    </div>
+
+    <!-- Auth Modal (Login / Register) -->
+    <div class="auth-modal" id="authModal" aria-hidden="true">
+        <div class="auth-panel" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+            <button class="auth-close" aria-label="Close" onclick="closeAuthModal()">×</button>
+            <div class="auth-title" id="authTitle">Welcome to Parivarthana</div>
+            <div class="auth-tabs" role="tablist">
+                <div class="auth-tab active" id="tab-login" role="tab" aria-selected="true" onclick="switchAuthTab('login')">Login</div>
+                <div class="auth-tab" id="tab-register" role="tab" aria-selected="false" onclick="switchAuthTab('register')">Register</div>
+            </div>
+
+            <div class="auth-body" id="authBody">
+                <!-- Social buttons -->
+                <div style="display:flex; gap:12px; margin-bottom:12px;">
+                    <button class="social-btn" onclick="alert('Social login UI only')">Continue with Google</button>
+                    <button class="social-btn" onclick="alert('Social login UI only')">Continue with Facebook</button>
+                </div>
+
+                <div class="divider">OR</div>
+
+                <div id="loginPanel">
+                    <input class="auth-input" id="loginPhone" type="tel" placeholder="Mobile number (e.g. +91 98765 43210)">
+                    <button class="auth-proceed" onclick="handleAuthProceed('login')">PROCEED</button>
+                    <div class="auth-footer">We will send an OTP to this number. By proceeding you agree to our Terms.</div>
+                </div>
+
+                <div id="registerPanel" style="display:none;">
+                    <input class="auth-input" id="regName" type="text" placeholder="Full name">
+                    <input class="auth-input" id="regPhone" type="tel" placeholder="Mobile number">
+                    <button class="auth-proceed" onclick="handleAuthProceed('register')">CREATE ACCOUNT</button>
+                    <div class="auth-footer">We'll create an account using this mobile number.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Parivarthana. All rights reserved.</p>
+        <p>Handcrafted with love in India</p>
+        <div class="social-links"></div>
+        <button class="scroll-top" onclick="scrollToTop()">↑</button>
+    </footer>
+
+    <script>
+        // Product Data from Price List
+        const products = [
+            // Stationery
+            { id: 1, name: 'Photo Frame Big', price: 130, category: 'Stationery', image: 'photoframebig.png' },
+            { id: 2, name: 'Photo Frame Small', price: 70, category: 'Stationery', image: 'Screenshot.png' },
+            { id: 3, name: 'Notepad Small', price: 70, category: 'Stationery', image: '3.png' },
+            { id: 4, name: 'Notepad Big', price: 95, category: 'Stationery', image: '4.png' },
+            { id: 5, name: 'Pen Stand', price: 70, category: 'Stationery', image: '5.png' },
+            { id: 6, name: 'Pen Stand Round', price: 85, category: 'Stationery', image: '6.png' },
+            { id: 7, name: 'Pen Stand with Frame', price: 95, category: 'Stationery', image: '7.png' },
+            { id: 8, name: 'Hard Board with Clamp File', price: 250, category: 'Stationery', image: '8.png' },
+            { id: 9, name: 'Greeting Card', price: 35, category: 'Stationery', image: '9.png' },
+            { id: 10, name: 'Envelope Small', price: 15, category: 'Stationery', image: '27.png' },
+            { id: 11, name: 'Envelope Big', price: 20, category: 'Stationery', image: '26.png' },
+            { id: 12, name: 'Long Box', price: 95, category: 'Stationery', image: '24.png' },
+            { id: 13, name: 'Box with Frame', price: 120, category: 'Stationery', image: '23.png' },
+            { id: 14, name: 'Exam Pad Small', price: 60, category: 'Stationery', image: '22.png' },
+            { id: 15, name: 'Exam Pad Big', price: 120, category: 'Stationery', image: '21.png' },
+            { id: 16, name: 'Diary', price: 130, category: 'Stationery', image: '20.png' },
+            { id: 17, name: 'STD Folder', price: 50, category: 'Stationery', image: '19.png' },
+            { id: 18, name: 'Blacksheet Folder', price: 70, category: 'Stationery', image: '18.png' },
+            { id: 19, name: 'Clip Folder', price: 130, category: 'Stationery', image: '17.png' },
+            { id: 20, name: 'Visiting Card Box', price: 70, category: 'Stationery', image: '16.png' },
+            { id: 21, name: 'Scrap Book Small', price: 240, category: 'Stationery', image: '15.png' },
+            { id: 22, name: 'Scrap Book Big', price: 300, category: 'Stationery', image: '14.png' },
+            { id: 23, name: 'Zig Zag Album', price: 300, category: 'Stationery', image: '13.png' },
+            { id: 24, name: 'Hard Board Pouch Folder', price: 130, category: 'Stationery', image: '12.png' },
+            { id: 25, name: 'Hard Board with Frame', price: 155, category: 'Stationery', image: '11.png' },
+            { id: 26, name: 'Paper Pen', price: 20, category: 'Stationery', image: '10.png' },
+            
+            // Accessories
+            { id: 27, name: 'Carry Bag Big', price: 50, category: 'Accessories', image: '28.png' },
+            { id: 28, name: 'Carry Bag Small', price: 30, category: 'Accessories', image: '29.png' },
+            { id: 29, name: 'Jewellery Box', price: 70, category: 'Accessories', image: '25.png' },
+            
+            // Gift Items
+            { id: 30, name: 'Gift Box with Frame', price: 120, category: 'Gift Items', image: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=400' }
+        ];
+
+        let cart = [];
+        let currentFilter = 'All';
+
+        // Initialize the page
+        function init() {
+            displayProducts(products);
+            updateCartDisplay();
+        }
+
+        // Display products
+        function displayProducts(productsToShow) {
+            const productGrid = document.getElementById('productGrid');
+            productGrid.innerHTML = '';
+            
+            productsToShow.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <div class="product-image" style="background-image: url('${product.image}'); background-size: cover; background-position: center;"></div>
+                    <div class="product-info">
+                        <div class="product-category">${product.category}</div>
+                        <h4 class="product-name">${product.name}</h4>
+                        <div class="product-footer">
+                            <div class="product-price">₹${product.price}</div>
+                            <button class="add-to-cart" onclick="addToCart(${product.id})">ADD TO CART</button>
+                        </div>
+                    </div>
+                `;
+                productGrid.appendChild(productCard);
+            });
+        }
+
+        // Filter products by category
+        function filterCategory(category) {
+            currentFilter = category;
+            const filtered = category === 'All' ? products : products.filter(p => p.category === category);
+            displayProducts(filtered);
+            
+            // Scroll to products section
+            document.getElementById('shop').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Scroll to shop section
+        function scrollToShop() {
+            document.getElementById('shop').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Scroll to about section
+        function scrollToAbout() {
+            document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Add to cart
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+            
+            updateCartDisplay();
+            
+            // Show a brief animation
+            const cartIcon = document.querySelector('.cart-icon');
+            cartIcon.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                cartIcon.style.transform = 'scale(1)';
+            }, 200);
+        }
+
+        // Update cart display
+        function updateCartDisplay() {
+            const cartCount = document.getElementById('cartCount');
+            const cartItemsContainer = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+            
+            // Update cart count
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            
+            // Update cart items
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="empty-cart">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <p>Your cart is empty</p>
+                    </div>
+                `;
+                cartTotal.textContent = '₹0';
+            } else {
+                cartItemsContainer.innerHTML = '';
+                let total = 0;
+                
+                cart.forEach(item => {
+                    total += item.price * item.quantity;
+                    
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item';
+                    cartItem.innerHTML = `
+                        <div class="cart-item-image" style="background-image: url('${item.image}'); background-size: cover; background-position: center;"></div>
+                        <div class="cart-item-details">
+                            <div class="cart-item-name">${item.name}</div>
+                            <div class="cart-item-price">₹${item.price}</div>
+                            <div class="quantity-controls">
+                                <button class="qty-btn" onclick="decreaseQuantity(${item.id})">-</button>
+                                <span class="quantity">${item.quantity}</span>
+                                <button class="qty-btn" onclick="increaseQuantity(${item.id})">+</button>
+                                <button class="remove-btn" onclick="removeFromCart(${item.id})">Remove</button>
+                            </div>
+                        </div>
+                    `;
+                    cartItemsContainer.appendChild(cartItem);
+                });
+                
+                cartTotal.textContent = `₹${total}`;
+            }
+        }
+
+        // Increase quantity
+        function increaseQuantity(productId) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity++;
+                updateCartDisplay();
+            }
+        }
+
+        // Decrease quantity
+        function decreaseQuantity(productId) {
+            const item = cart.find(item => item.id === productId);
+            if (item && item.quantity > 1) {
+                item.quantity--;
+                updateCartDisplay();
+            }
+        }
+
+        // Remove from cart
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCartDisplay();
+        }
+
+        // Toggle cart
+        function toggleCart() {
+            const cartSidebar = document.getElementById('cartSidebar');
+            cartSidebar.classList.toggle('open');
+        }
+
+        // Checkout
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            alert(`Thank you for your order!\n\nTotal: ₹${total}\n\nWe'll contact you shortly to confirm your order.`);
+            
+            cart = [];
+            updateCartDisplay();
+            toggleCart();
+        }
+
+        // Scroll to top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Toggle between about videos
+        let currentAboutVideo = 1;
+        function toggleAboutVideo() {
+            const video1 = document.getElementById('video1');
+            const video2 = document.getElementById('video2');
+            const video3 = document.getElementById('video3');
+            
+            video1.classList.remove('active');
+            video2.classList.remove('active');
+            video3.classList.remove('active');
+            
+            if (currentAboutVideo === 1) {
+                video2.classList.add('active');
+                currentAboutVideo = 2;
+            } else if (currentAboutVideo === 2) {
+                video3.classList.add('active');
+                currentAboutVideo = 3;
+            } else {
+                video1.classList.add('active');
+                currentAboutVideo = 1;
+            }
+        }
+
+        // Gallery slider functionality
+        let currentGallerySlide = 0;
+        const totalGallerySlides = 10;
+
+        function showGallerySlide(index) {
+            const slides = document.querySelectorAll('.gallery-slide');
+            const dots = document.querySelectorAll('.gallery-dot');
+            
+            if (index >= totalGallerySlides) {
+                currentGallerySlide = 0;
+            } else if (index < 0) {
+                currentGallerySlide = totalGallerySlides - 1;
+            } else {
+                currentGallerySlide = index;
+            }
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[currentGallerySlide].classList.add('active');
+            dots[currentGallerySlide].classList.add('active');
+        }
+
+        function nextGallerySlide() {
+            showGallerySlide(currentGallerySlide + 1);
+        }
+
+        function prevGallerySlide() {
+            showGallerySlide(currentGallerySlide - 1);
+        }
+
+        function initGallery() {
+            const galleryControls = document.getElementById('galleryControls');
+            
+            for (let i = 0; i < totalGallerySlides; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+                dot.onclick = () => showGallerySlide(i);
+                galleryControls.appendChild(dot);
+            }
+        }
+
+        // Initialize on page load
+        window.onload = function() {
+            init();
+            initGallery();
+        };
+        // Count-up animation for impact stats (runs once when visible)
+        (function() {
+            function animateCounts() {
+                const counts = document.querySelectorAll('.impact-stats-bar .count');
+                counts.forEach(el => {
+                    const target = parseInt(el.getAttribute('data-target'), 10) || 0;
+                    const duration = 1400;
+                    const start = 0;
+                    const startTime = performance.now();
+
+                    function tick(now) {
+                        const elapsed = now - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        const eased = 1 - Math.pow(1 - progress, 3);
+                        el.textContent = Math.floor(start + (target * eased));
+                        if (progress < 1) requestAnimationFrame(tick);
+                        else el.textContent = target;
+                    }
+                    requestAnimationFrame(tick);
+                });
+            }
+
+            let triggered = false;
+            const obs = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !triggered) {
+                        triggered = true;
+                        animateCounts();
+                        obs.disconnect();
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            const el = document.querySelector('.impact-stats-bar');
+            if (el) obs.observe(el);
+        })();
+
+        // Auth modal handlers
+        function openAuthModal() {
+            const modal = document.getElementById('authModal');
+            modal.classList.add('open');
+            modal.setAttribute('aria-hidden', 'false');
+            // default to login
+            switchAuthTab('login');
+        }
+
+        function closeAuthModal() {
+            const modal = document.getElementById('authModal');
+            modal.classList.remove('open');
+            modal.setAttribute('aria-hidden', 'true');
+        }
+
+        function switchAuthTab(tab) {
+            const loginTab = document.getElementById('tab-login');
+            const registerTab = document.getElementById('tab-register');
+            const loginPanel = document.getElementById('loginPanel');
+            const registerPanel = document.getElementById('registerPanel');
+
+            if (tab === 'login') {
+                loginTab.classList.add('active');
+                registerTab.classList.remove('active');
+                loginTab.setAttribute('aria-selected', 'true');
+                registerTab.setAttribute('aria-selected', 'false');
+                loginPanel.style.display = '';
+                registerPanel.style.display = 'none';
+            } else {
+                loginTab.classList.remove('active');
+                registerTab.classList.add('active');
+                loginTab.setAttribute('aria-selected', 'false');
+                registerTab.setAttribute('aria-selected', 'true');
+                loginPanel.style.display = 'none';
+                registerPanel.style.display = '';
+            }
+        }
+
+        function handleAuthProceed(mode) {
+            if (mode === 'login') {
+                const phone = document.getElementById('loginPhone').value.trim();
+                if (!phone) { alert('Please enter mobile number'); return; }
+                // Demo: store a simple session in localStorage
+                localStorage.setItem('parivarthana_user', JSON.stringify({ phone }));
+                alert('OTP sent (demo). Logged in as ' + phone);
+                closeAuthModal();
+            } else {
+                const name = document.getElementById('regName').value.trim();
+                const phone = document.getElementById('regPhone').value.trim();
+                if (!name || !phone) { alert('Please enter name and mobile number'); return; }
+                localStorage.setItem('parivarthana_user', JSON.stringify({ name, phone }));
+                alert('Account created (demo). Welcome, ' + name);
+                closeAuthModal();
+            }
+            updateHeaderAfterAuth();
+        }
+
+        function updateHeaderAfterAuth() {
+            const raw = localStorage.getItem('parivarthana_user');
+            const btn = document.querySelector('.auth-btn');
+            if (raw && btn) {
+                try {
+                    const u = JSON.parse(raw);
+                    if (u.name) btn.textContent = 'Hi, ' + u.name.split(' ')[0];
+                    else if (u.phone) btn.textContent = 'Hi, ' + u.phone.slice(-4);
+                } catch(e) { /* ignore */ }
+            }
+        }
+
+        // Populate header if already logged in
+        updateHeaderAfterAuth();
+
+        // Function to handle video playback sequence
+function setupVideoSequence() {
+    const videoSlides = document.querySelectorAll('.video-slide');
+    const totalVideos = videoSlides.length;
+    let currentVideoIndex = 0;
+
+    // Get all the video elements
+    const videos = Array.from(videoSlides).map(slide => slide.querySelector('video'));
+
+    // Function to show a specific slide and start its video
+    function showVideo(index) {
+        // Hide all slides and pause all videos
+        videoSlides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            videos[i].pause();
+        });
+
+        // Show the target slide and play its video
+        videoSlides[index].classList.add('active');
+        videos[index].currentTime = 0; // Rewind to start
+        videos[index].play();
+        
+        currentVideoIndex = index;
+    }
+
+    // Function to switch to the next video
+    function playNextVideo() {
+        // Calculate the index of the next video (wrap around to 0 if at the end)
+        const nextIndex = (currentVideoIndex + 1) % totalVideos;
+        showVideo(nextIndex);
+    }
+
+    // Add the 'ended' event listener to each video
+    videos.forEach(video => {
+        // Important: Remove the loop attribute for sequencing
+        video.removeAttribute('loop'); 
+
+        video.addEventListener('ended', () => {
+            playNextVideo();
+        });
+    });
+
+    // Start the sequence with the first video
+    if (videos.length > 0) {
+        // Ensure the very first video starts playing immediately on load
+        // Note: It's muted to comply with browser autoplay policies.
+        videos[0].play(); 
+    }
+}
+
+// Run the setup function when the page content is loaded
+document.addEventListener('DOMContentLoaded', setupVideoSequence);
+
+
+// You can keep your existing toggle function, but it needs to be updated 
+// to work with the new sequencing logic.
+function toggleAboutVideo() {
+    // This is the function linked to the button. It should manually switch the video.
+    const videoSlides = document.querySelectorAll('.video-slide');
+    const totalVideos = videoSlides.length;
+    
+    // Find the currently active video index
+    let activeIndex = -1;
+    videoSlides.forEach((slide, i) => {
+        if (slide.classList.contains('active')) {
+            activeIndex = i;
+        }
+    });
+    
+    // Calculate the index of the next video (wrap around to 0)
+    const nextIndex = (activeIndex + 1) % totalVideos;
+    
+    // Manually switch using the logic from showVideo, but without the loop listener setup
+    videoSlides.forEach((slide, i) => {
+        const video = slide.querySelector('video');
+        slide.classList.remove('active');
+        video.pause();
+    });
+
+    const nextSlide = videoSlides[nextIndex];
+    const nextVideo = nextSlide.querySelector('video');
+    
+    nextSlide.classList.add('active');
+    nextVideo.currentTime = 0;
+    nextVideo.play();
+}
+    </script>
+</body>
+</html>
